@@ -1,9 +1,6 @@
 package com.example.blogboot.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 
@@ -15,6 +12,16 @@ public class Author implements Serializable {
     private String name;
     private LocalDate date_of_birth;
     private int experienceYears;
+@ManyToOne
+    private Author author;
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 
     public Integer getId() {
         return id;
